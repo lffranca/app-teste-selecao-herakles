@@ -1,0 +1,87 @@
+<md-content style="background:transparent!important;" class="my-view-body">
+	<md-button ng-click="vm.sidenavCreate()" style="position:fixed;right:10px;top:85px;" class="md-fab" aria-label="Adicionar">
+		<md-tooltip>
+			Novo
+		</md-tooltip>
+        <md-icon style="color:white;" md-font-set="material-icons">add</md-icon>
+    </md-button>
+	<div class="my_search" layout="row" layout-align="center center">
+		<md-tooltip>
+			Procurar por Postit
+		</md-tooltip>
+		<input placeholder="Procurar..." class="my_input_search" type="text" ng-model="vm.search">
+	</div>
+	<div class="postits">
+	    <my-post-it ng-click="vm.options(item)" description="{{item.description}}" date="{{item.createdAt | date:'dd/MM/yyyy HH:mm:ss'}}" ng-repeat="item in vm.items | filter:vm.search | orderBy:'-createdAt'"">
+	    	{{item.text}}
+	    </my-post-it>
+	</div>
+	<md-sidenav class="md-sidenav-right" md-component-id="sidenav-edit" md-disable-backdrop md-whiteframe="4">
+		<md-toolbar class="toolbar" layout="row" layout-align="start center">
+			<h1 class="md-toolbar-tools">Editar</h1>
+			<span flex></span>
+			<md-button class="md-icon-button" aria-label="Fechar" ng-click="vm.closeSidenav()">
+				<md-icon md-font-set="material-icons">close</md-icon>
+			</md-button>
+		</md-toolbar>
+		<md-content layout-margin>
+			<div style="height:80%;" layout="column">
+				<md-input-container class="md-block">
+					<label>Descrição</label>
+					<input ng-model="vm.item.description">
+				</md-input-container>
+
+				<md-input-container class="md-block">
+					<label>Texto</label>
+					<textarea ng-model="vm.item.text" rows="5"></textarea>
+				</md-input-container>
+			</div>
+			<md-button ng-click="vm.save.update()" style="position:absolute;right:10px;bottom:10px;" 
+				class="md-fab" aria-label="Salvar">
+				<md-icon style="color:white;" md-font-set="material-icons">send</md-icon>
+			</md-button>
+		</md-content>
+	</md-sidenav>
+	<md-sidenav class="md-sidenav-right" md-component-id="sidenav-create" md-disable-backdrop md-whiteframe="4">
+		<md-toolbar class="toolbar" layout="row" layout-align="start center">
+			<h1 class="md-toolbar-tools">Novo</h1>
+			<span flex></span>
+			<md-button class="md-icon-button" aria-label="Fechar" ng-click="vm.closeSidenav()">
+				<md-icon md-font-set="material-icons">close</md-icon>
+			</md-button>
+		</md-toolbar>
+		<md-content layout-margin>
+			<div style="height:80%;" layout="column">
+				<md-input-container class="md-block">
+					<label>Descrição</label>
+					<input ng-model="vm.item.description">
+				</md-input-container>
+
+				<md-input-container class="md-block">
+					<label>Texto</label>
+					<textarea ng-model="vm.item.text" rows="5"></textarea>
+				</md-input-container>
+			</div>
+			<md-button ng-click="vm.save.create()" style="position:absolute;right:10px;bottom:10px;" 
+				class="md-fab" aria-label="Salvar">
+				<md-icon style="color:white;" md-font-set="material-icons">send</md-icon>
+			</md-button>
+		</md-content>
+	</md-sidenav>
+</md-content>
+
+<div style="visibility: hidden">
+	<div class="md-dialog-container" id="dialogDelete">
+		<md-dialog style="padding:30px;">
+			Deseja realmente deletar "{{vm.item.description}}"?
+			<div style="margin-top:20px;" layout="row">
+				<md-button ng-click="vm.cancelDelte()" class="md-raised" class="md-primary" flex="50">
+					Cancelar
+				</md-button>
+				<md-button ng-click="vm.save.delete()" class="md-raised md-warn" flex="50">
+					Sim
+				</md-button>
+			</div>
+		</md-dialog>
+	</div>
+</div>

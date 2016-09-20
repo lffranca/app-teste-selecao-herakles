@@ -1,0 +1,38 @@
+<md-toolbar id="header_private" style="position:fixed;top:0;">
+	<div class="md-toolbar-tools">
+		<div class="my_header" layout="row" layout-align="center center">
+			<div class="my_header_logo" layout="row" layout-align="center center">
+				<img>
+			</div>
+			<div class="divider"></div>
+			POST IT
+		</div>
+
+		<span flex></span>
+		<md-button class="md-fab md-mini" aria-label="Favorite">
+			<md-icon md-font-set="material-icons">notifications</md-icon>
+		</md-button>
+		<md-menu-bar style="padding:0;margin:0;">
+			<md-menu>
+				<md-button ng-click="$mdOpenMenu()" class="md-fab md-mini my_button_perfil" aria-label="More">
+					{{user.name | perfil | uppercase}}
+				</md-button>
+				<md-menu-content>
+					<md-menu-item>
+						<md-button>
+							Meu Perfil
+						</md-button>
+					</md-menu-item>
+					<md-menu-divider></md-menu-divider>
+					<md-menu-item>
+						<md-button ng-click="demo.logout()">
+							Sair
+						</md-button>
+					</md-menu-item>
+				</md-menu-content>
+			</md-menu>
+		</md-menu-bar>
+	</div>
+</md-toolbar>
+
+<div class="my-pattern"></div>

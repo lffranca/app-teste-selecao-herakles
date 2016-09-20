@@ -1,0 +1,25 @@
+<md-content layout="row" layout-align="center center" id="login">
+	<div flex-xs="90" flex-sm="70" flex-gt-sm="40" layout-sm="column">
+		<div layout="row" layout-align="center center" class="img_logo">
+			<img>
+		</div>
+		<form>
+			<md-input-container class="md-block" flex-gt-xs>
+				<label>Email</label>
+				<input type="email" ng-model="vm.item.email">
+			</md-input-container>
+			<md-input-container class="md-block" flex-gt-xs>
+				<label>Senha</label>
+				<input type="password" ng-model="vm.item.password">
+			</md-input-container>
+			<div layout="row" layout-align="space-between center">
+				<div flex layout="row" layout-align="end center">
+					<a href="">Esqueceu sua senha?</a>
+				</div>
+			</div>
+			<md-button ng-click="vm.send()" class="md-raised md-warn my_button_block">
+				Entrar
+			</md-button>
+		</form>
+    </div>
+</md-content>

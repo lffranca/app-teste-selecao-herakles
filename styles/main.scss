@@ -1,0 +1,293 @@
+$orange: rgba(231, 119, 71, 1);
+$light-orange: rgba(236, 151, 73, 1);
+
+$blue: rgba(52, 74, 95, 1);
+$dark-blue: rgba(31, 40, 52, 1);
+
+body {
+	height: 100%;
+	width: 100%;
+}
+
+.my-view-body {
+	position: absolute;
+	width: 100%;
+	top: 50px;
+	left: 0;
+}
+
+.my-pattern {
+	height: 200px;
+	width: 100%;
+	background-image: url('./images/pattern.jpg');
+}
+
+.my_button_block {
+	width: 99.8%!important;
+	margin-left: 2px;
+}
+
+#header {
+	height: 64px;
+	background-color: transparent;
+	position: fixed;
+	border-bottom: 1px solid rgba(255,255,255,0.1);
+	.md-toolbar-tools {
+		height: 64px!important;
+		max-height: 64px;
+	}
+	#logo_alt {
+		height: 100%;
+		align-items: center;
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		img{
+			width: 185px;
+			height: 35px;
+			content: url('./images/postit-logo-alt.png');
+		}
+	}
+}
+
+#home {
+	height: 100%;
+	width: 100%;
+	#intro {
+		height: 100%;
+		width: 100%;
+		background-image: url('./images/book-731199.jpg');
+		background-color: #4C4C4C;
+		background-repeat: no-repeat;
+		background-position: center;
+	}
+
+	#about {
+		height: 100%;
+		width: 100%;
+	}
+}
+
+#login {
+	height: 100%;
+	width: 100%;
+	background-image: url('./images/login-bg.jpg');
+	background-color: #4C4C4C;
+	background-repeat: no-repeat;
+	background-position: center;
+	input {
+		color: white!important;
+		border-color: rgba(255,255,255,0.5);
+	}
+	label {
+		color: white!important;
+	}
+	a {
+		text-decoration: none;
+		color: rgba(255,255,255,0.6);
+	}
+	.img_logo {
+		img {
+			content: url('./images/postit-logo.png');
+		}
+	}
+}
+
+[scroll-header-dir] {
+	transition:all 1s;
+    -moz-transition:all 1s;
+    -o-transition:all 1s;
+    -webkit-transition:all 1s;
+}
+
+[scroll-header-dir].scrolldown {
+	background-color: rgba(51,55,66,1)!important;
+}
+
+/**PRIVATE**/
+#header_private {
+	background-color: rgba(31,40,52,1);
+	.md-fab {
+		color: rgba(255,255,255,1);
+		md-icon {
+			color: rgba(255,255,255,1);
+		}
+	}
+	.my_button_perfil {
+		background-color: rgba(53,61,72,1);
+	}
+	.my_header {
+		margin-right: 20px;
+		.my_header_logo {
+			height: 100%;
+			img {
+				height: 70%;
+				width: auto;
+				content: url('./images/postit-logo-tiny-alt.png');
+			}
+		}
+		.divider {
+			height: 40px;
+			margin: 0 10px 0 10px;
+			width: 0;
+			border-right: 1px solid rgba(255,255,255,0.4);
+		}
+	}
+}
+.my-card {
+	width: 100%;
+	background-color: rgba(255,255,255,1);
+	min-height: 300px;
+	margin-bottom: 10px;
+	.my-card-header {
+		height: 50px;
+		max-height: 50px;
+		min-height: 50px;
+		padding: 0 10px 0 10px;
+		color: rgba(255,255,255,1);
+		font-size: 20px;
+		font-weight: 900;
+	}
+	.my-card-body {
+		padding: 0;
+	}
+}
+
+.postits {
+	align-items: center;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+	.quote-container {
+		float:left;
+		margin-top: 20px;
+		margin: 10px;
+		position: relative;
+		.note {
+			color: #333;
+			position: relative;
+			width: 300px;
+			margin: 0 auto;
+			padding: 20px;
+			font-size: 20px;
+			box-shadow: 0 10px 10px 2px rgba(0,0,0,0.3);
+			&.yellow {
+				background: #eae672;
+				-webkit-transform: rotate(2deg);
+				-moz-transform: rotate(2deg);
+				-o-transform: rotate(2deg);
+				-ms-transform: rotate(2deg);
+				transform: rotate(2deg);
+			}
+			.description {
+				text-align: center;
+				font-size: 25px;
+				font-weight: 900px;
+				margin-bottom: 10px;
+			}
+			.date {
+				display: block;
+				margin: 40px 0 0 0;
+				text-align: right;
+				color:rgba(0,0,0,0.5);
+				font-size:14px;
+			}
+		} 
+
+		.pin {
+			background-color: #aaa;
+			display: block;
+			height: 32px;
+			width: 2px;
+			position: absolute;
+			left: 50%;
+			top: -16px;
+			z-index: 1;
+			&:after {
+				background-color: #A31;
+				background-image: radial-gradient(25% 25%, circle, hsla(0,0%,100%,.3), hsla(0,0%,0%,.3));
+				border-radius: 50%;
+				box-shadow: inset 0 0 0 1px hsla(0,0%,0%,.1),
+				inset 3px 3px 3px hsla(0,0%,100%,.2),
+				inset -3px -3px 3px hsla(0,0%,0%,.2),
+				23px 20px 3px hsla(0,0%,0%,.15);
+				content: '';
+				height: 12px;
+				left: -5px;
+				position: absolute;
+				top: -10px;
+				width: 12px;
+			}
+			&:before {
+				background-color: hsla(0,0%,0%,0.1);
+				box-shadow: 0 0 .25em hsla(0,0%,0%,.1);
+				content: '';
+
+				height: 24px;
+				width: 2px;
+				left: 0;
+				position: absolute;
+				top: 8px;
+
+				transform: rotate(57.5deg);
+				-moz-transform: rotate(57.5deg);
+				-webkit-transform: rotate(57.5deg);
+				-o-transform: rotate(57.5deg);
+				-ms-transform: rotate(57.5deg);
+
+				transform-origin: 50% 100%;
+				-moz-transform-origin: 50% 100%;
+				-webkit-transform-origin: 50% 100%;
+				-ms-transform-origin: 50% 100%;
+				-o-transform-origin: 50% 100%;
+			}
+		}
+	}
+}
+
+.my_button_sheet {
+	position:fixed!important;
+	bottom:0;
+	left:0;
+}
+
+.my_search {
+	background:transparent;
+	margin-bottom:40px;
+	.my_input_search {
+		padding:5px;
+		width:80%;
+		border-radius:3px;
+		border:none;
+		height:40px;
+		font-size: 25px;
+		&:focus {
+			border:none;
+			box-shadow:0;
+		}
+	}
+}
+
+.md-sidenav-right {
+	position:fixed!important;
+	top:64px!important;
+	right:0!important;
+	width:500px!important;
+	max-width:500px!important;
+	.toolbar {
+		background-color: $dark-blue;
+	}
+}
+
+@media screen and (min-width: 0px) and (max-width: 600px) { 
+    #header {
+		#logo_alt{
+			img{
+				content: url('./images/postit-logo-tiny-alt.png');
+				width: 41px!important;
+				height: 35px!important;
+			}
+		}
+	}
+}
