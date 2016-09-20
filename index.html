@@ -15,7 +15,7 @@
 	
 	<div ui-view="header"></div>
 	<div ui-view="body"></div>
-	<div class="my-view-body" ui-view="body-auth"></div>
+	<div ng-if="user" class="my-view-body" ui-view="body-auth"></div>
 	<div ui-view="footer"></div>
 
 	<script src="node_modules/angular/angular.min.js"></script>
